@@ -3,18 +3,18 @@ import { PiMapPinLight } from "react-icons/pi";
 import { CiHeart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 
-export const DayNight = ({ isDay, gradus, tempUg, className }) => {
+export const DayNight = ({ isDay, className, data }) => {
   var strokeColor = "";
   return (
     <div
-      className={`w-[414px] h-[832px] flex flex-col gar-[24px] rounded-[42px] backdrop-blur-[12px] pt-[64px] px-[48px] pb-[54px] ${className}`}>
+      className={`w-[414px] h-[832px] flex flex-col gar-[24px] rounded-[42px] bg-opacity-5 backdrop-blur-[12px] pt-[64px] px-[48px] pb-[54px] ${className}`}>
       <div className="flex flex-row justify-between items-center">
         <div>
-          <p className="text-[#9CA3AF] text-[18px]">September 10, 2021</p>
+          <p className="text-[#9CA3AF] text-[18px]">{data.date}</p>
           {isDay ? (
-            <p className="text-[#111827] text-[48px]">Ulaanbaatar</p>
+            <p className="text-[#111827] text-[48px]">{data.city}</p>
           ) : (
-            <p className="text-white text-[48px]">Ulaanbaatar</p>
+            <p className="text-white text-[48px]">{data.city}</p>
           )}
         </div>
         <svg
@@ -56,15 +56,15 @@ export const DayNight = ({ isDay, gradus, tempUg, className }) => {
       </div>
       <div className="flex flex-col">
         {isDay ? (
-          <p className="text-[144px] font-[800] text-transparent bg-clip-text bg-gradient-to-r from-[#111827] to-[#6B7280]">{`${gradus}°`}</p>
+          <p className="text-[144px] font-[800] text-transparent bg-clip-text bg-gradient-to-r from-[#111827] to-[#6B7280]">{`${data.gradus}°`}</p>
         ) : (
-          <p className="text-[144px] font-[800] text-transparent bg-clip-text bg-gradient-to-b from-[#F9FAFB] to-[#444954]">{`${gradus}°`}</p>
+          <p className="text-[144px] font-[800] text-transparent bg-clip-text bg-gradient-to-b from-[#F9FAFB] to-[#444954]">{`${data.gradus}°`}</p>
         )}
 
         {isDay ? (
-          <p className="text-[#FF8E27] text-[24px] font-[800]">{tempUg}</p>
+          <p className="text-[#FF8E27] text-[24px] font-[800]">{data.tempUg}</p>
         ) : (
-          <p className="text-[#777CCE] text-[24px] font-[800]">{tempUg}</p>
+          <p className="text-[#777CCE] text-[24px] font-[800]">{data.tempUg}</p>
         )}
       </div>
       {isDay ? (
