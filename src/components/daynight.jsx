@@ -2,6 +2,7 @@ import { CiHome } from "react-icons/ci";
 import { PiMapPinLight } from "react-icons/pi";
 import { CiHeart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
+import { IoLocationOutline } from "react-icons/io5";
 
 export const DayNight = ({ isDay, className, data }) => {
   var strokeColor = "";
@@ -17,29 +18,9 @@ export const DayNight = ({ isDay, className, data }) => {
             <p className="text-white text-[48px]">{data.city}</p>
           )}
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none">
-          <path
-            d="M18.4768 25.5772L23.1596 17.2151C26.2226 11.7453 22.2691 5 16 5C9.73095 5 5.77737 11.7453 8.84045 17.2151L13.5232 25.5772C14.6072 27.5128 17.3928 27.5128 18.4768 25.5772Z"
-            stroke="#9CA3AF"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <circle
-            cx="16"
-            cy="13"
-            r="2"
-            stroke="#9CA3AF"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+        <div style={{ color: "#D1D5DB" }}>
+          <PiMapPinLight size={24} />
+        </div>
       </div>
       <div className="flex items-center justify-center">
         {isDay ? (
